@@ -10,6 +10,9 @@ host
     ex: usar um serviço mysql instalado na maquina e varios containers usando o mysql
     ex2: minio, todos os containers podem salvar no arquivos em buckets do minio sem estar na mesma rede
     OBS: OK no linux e Windows COM wsl2, porem nao roda muito bem em Mac e Windows sem wsl2
+    Para o container acessar a maquina host use 
+    host.docker.internal
+        /\ Esse deve ser o host da maquina 
 overlay
     Diferentes hosts (maquinas) trabalham na mesma rede
     Container da maquina 1 pode acessar containers da maquina X, e vice e versa
