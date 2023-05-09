@@ -1,6 +1,8 @@
 bridge
     Comunicação entre containers
     Modo de rede padrão
+    Se nao definir a rede o docker não faz resolução de nome (vc nao consegue encontrar o container pelo nome), somente pelo ip
+        Se definir o nome da rede vc consegue fazer a resolução de nomes
 host
     os containers e o host ficam na mesma rede
     Container pode acessar serviços do host
@@ -17,3 +19,15 @@ mclan
 none
     Nenhuma rede
     Container roda de forma isolada
+
+
+
+Comandos
+docker network ls
+    Lista todas as redes do docker
+docker network prune
+    Remove todas as redes nao utilizadas
+docker inspect <nome_da_rede>
+    Exibe os dados da rede de forma detalhada, incluindo os containers conectados a ela
+docker network connect <nome_da_rede> <container_name>
+    Conecta o container <container_name> a rede de nome <nome_da_rede>
