@@ -1,0 +1,19 @@
+bridge
+    Comunicação entre containers
+    Modo de rede padrão
+host
+    os containers e o host ficam na mesma rede
+    Container pode acessar serviços do host
+    Host pode acessar containers sem passar pela engine do docker
+    ex: usar um serviço mysql instalado na maquina e varios containers usando o mysql
+    ex2: minio, todos os containers podem salvar no arquivos em buckets do minio sem estar na mesma rede
+overlay
+    Diferentes hosts (maquinas) trabalham na mesma rede
+    Container da maquina 1 pode acessar containers da maquina X, e vice e versa
+    Indicado quando se usa Docker Swarn
+mclan
+    cria uma rede adicional como se estivesse plugada na rede do host
+    nao é muito comum de ser usada
+none
+    Nenhuma rede
+    Container roda de forma isolada
