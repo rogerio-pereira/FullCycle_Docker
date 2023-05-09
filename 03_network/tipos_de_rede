@@ -13,6 +13,7 @@ host
     Para o container acessar a maquina host use 
     host.docker.internal
         /\ Esse deve ser o host da maquina 
+        OBS: não tenho certeza se isso funciona em modo bridge
 overlay
     Diferentes hosts (maquinas) trabalham na mesma rede
     Container da maquina 1 pode acessar containers da maquina X, e vice e versa
