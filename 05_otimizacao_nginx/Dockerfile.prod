@@ -1,0 +1,10 @@
+FROM nginx:1.15.0-alpine
+
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d
+
+#Precisa criar esse arquivo para o nginx repassar a chamada para o fastcgi
+#-p vai criar diretorio e subdiretorios caso nao existam
+#O arquivo pode estar em branco, mas PRECISA existir se nao vai retornar um erro 404
+RUN mkdir /var/www/html -p && \
+    touch /var/www/html/index.php

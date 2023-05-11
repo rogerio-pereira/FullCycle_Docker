@@ -30,6 +30,8 @@ RUN rm -fr /var/www/html
 #Copy folder /var/www/laravel generated on stage "builder" to workdir
 COPY --from=builder /var/www/laravel .
 
+RUN ln -s public html
+
 RUN chown -R www-data:www-data /var/www/
 
 EXPOSE 9000
@@ -38,8 +40,8 @@ EXPOSE 9000
 #This is a variant of PHP that will run in the background as a daemon, listening for CGI requests
 #Common Gateway Interface (CGI) is an interface specification that enables web servers to execute an external program, 
 #   typically to process user requests
-CMD ['php-fpm']
-
+#O comando php-fpm nao exibe imagens, então é preciso copiar as imagens para o nginx
+CMD [ "php-fpm" ]
 
 #To build this image
 # The . means current folder, to build this image you need to be inside this folder 
