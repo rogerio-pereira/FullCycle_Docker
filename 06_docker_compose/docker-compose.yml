@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+    laravel:
+        image: farofapereira/full_cycle_laravel:prod
+        container_name: laravel
+        networks: 
+            - laravel
+    nginx:
+        image: farofapereira/full_cycle_nginx:prod
+        container_name: nginx
+        networks: 
+            - laravel
+        ports:
+            - 80:80
+networks:
+    laravel:
+        driver: bridge
