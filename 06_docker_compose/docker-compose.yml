@@ -24,7 +24,7 @@ services:
         environment:
             - MYSQL_DATABASE=nodedb
             - MYSQL_ROOT_PASSWORD=root
-            - MYSQL_USER=root
+            # - MYSQL_USER=root #Pode ser apagada, nas versoes mais novas da imagem o usuario root já é criado por padrão
         networks:
             - node_network
 
